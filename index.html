@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARK | Streetwear Alexandria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --card-bg: #141414;
+            --accent: #ffffff;
+            --text-gray: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--accent);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(10, 10, 10, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #222;
+        }
+
+        .brand-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: lowercase;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            padding: 5rem 5% 3rem;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .signature {
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            color: var(--text-gray);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #222;
+            color: #fff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+        }
+
+        .catalog {
+            padding: 2rem 5% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #222;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+
+        .product-card:hover {
+            border-color: #444;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 320px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .details {
+            padding: 1.2rem;
+        }
+
+        .details h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .details p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .buy-btn {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .buy-btn:hover {
+            background: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #222;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .powered-by {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo">spark</div>
+        <ul class="nav-links">
+            <li><a href="#graphics">Graphic Drops</a></li>
+            <li><a href="#basics">Basics Line</a></li>
+            <li><a href="https://instagram.com/sparkstore2026" target="_blank">Instagram</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <span class="badge">Alexandria, Egypt</span>
+        <h1>Streetwear & Essentials</h1>
+        <div class="signature">Elegance in every detail</div>
+        <p>Premium graphic drops and heavyweight everyday basics crafted for the bold.</p>
+    </section>
+
+    <main class="catalog">
+        
+        <!-- Graphic Drops Section -->
+        <h2 class="section-title" id="graphics">Graphic Drops</h2>
+        <div class="grid">
+            
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="d:\sho8l\spark\0616d8c7-288b-4b58-afdc-505061035aa4.jfif" alt="Why Not Me White Tee">
+                </div>
+                <div class="details">
+                    <h3>"Broken Man" Tee - White</h3>
+                    <p>Oversized fit with custom back graphic</p>
+                    <div class="price-row">
+                        <span class="price">350 EGP</span>
+                        <a href="https://instagram.com/sparkstore2026" target="_blank" class="buy-btn">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="d:\sho8l\spark\61bd3ade-e4fc-4022-a5d4-ccfd9726de33.jfif" alt="Why Not Me Black Tee">
+                </div>
+                <div class="details">
+                    <h3>"Why Not Me?" Tee - Black</h3>
+                    <p>Oversized fit with custom back graphic</p>
+                    <div class="price-row">
+                        <span class="price">350 EGP</span>
+                        <a href="https://instagram.com/sparkstore2026" target="_blank" class="buy-btn">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="d:\sho8l\spark\14c77a91-cdf4-4df8-80c7-7042243b63d4.jfif" alt="Barcelona Edition White Tee">
+                </div>
+                <div class="details">
+                    <h3>Barcelona Edition - White</h3>
+                    <p>Cactus Jack x Barca oversized edition</p>
+                    <div class="price-row">
+                        <span class="price">350 EGP</span>
+                        <a href="https://instagram.com/sparkstore2026" target="_blank" class="buy-btn">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="d:\sho8l\spark\cc7dc265-1740-40d5-9b39-9e92ee4bdf31.jfif" alt="Barcelona Edition Black Tee">
+                </div>
+                <div class="details">
+                    <h3>Barcelona Edition - Black</h3>
+                    <p>Cactus Jack x Barca oversized edition</p>
+                    <div class="price-row">
+                        <span class="price">350 EGP</span>
+                        <a href="https://instagram.com/sparkstore2026" target="_blank" class="buy-btn">Order</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Basics Line Section -->
+        <h2 class="section-title" id="basics">Basics Line</h2>
+        <div class="grid">
+            
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="d:\sho8l\spark\80d40569-896b-4b6c-b7f9-7eb007b49132.jfif" alt="Basic Essential Tees">
+                </div>
+                <div class="details">
+                    <h3>Basic Tees (White / Black / Gray)</h3>
+                    <p>Heavyweight plain oversized essentials</p>
+                    <div class="price-row">
+                        <span class="price">250 EGP</span>
+                        <a href="https://instagram.com/sparkstore2026" target="_blank" class="buy-btn">Order</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SPARK Store. Designed in Alexandria, Egypt.</p>
+        <p style="margin-top: 5px;"><a href="https://instagram.com/sparkstore2026" target="_blank">@sparkstore2026</a></p>
+        <p class="powered-by">Powered by Adham Elfrnwany</p>
+    </footer>
+
+</body>
+</html>
